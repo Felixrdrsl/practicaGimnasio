@@ -63,7 +63,7 @@ public class app {
         gym.reservarActividad("555E", "A6");
         gym.reservarActividad("666F", "A7");
 
-        // 5. Confirmar asistencia (ejemplo simple)
+        // 5. Confirmar asistencia
         gym.getReservasOrdenadasPorFecha().get(0).confirmarAsistencia();
         gym.getReservasOrdenadasPorFecha().get(1).confirmarAsistencia();
 

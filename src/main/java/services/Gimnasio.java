@@ -215,18 +215,19 @@ public class Gimnasio {
 
 
     public List<Socio> getRankingSocios() {
-        List<Socio> lista = new ArrayList<>(reservas.keySet());
+        List<Socio> lista = new ArrayList<>();
 
+        for (Map.Entry<Socio, HashSet<Reserva>> entrada : reservas.entrySet()) {
+            lista.add(entrada.getKey());
+        }
         lista.sort(new Comparator<Socio>() {
+            @Override
             public int compare(Socio s1, Socio s2) {
-
                 int r1 = reservas.get(s1).size();
                 int r2 = reservas.get(s2).size();
-
                 return Integer.compare(r2, r1);
             }
         });
-
         return lista;
     }
 
